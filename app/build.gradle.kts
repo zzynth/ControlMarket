@@ -8,8 +8,8 @@ android {
 
     defaultConfig {
         applicationId = "com.example.controlmarket"
-        minSdk = 24
-        targetSdk = 36
+        minSdk = 26
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -27,9 +27,10 @@ android {
     }
 
     compileOptions {
-        // Compatibilidad con Java 7
-        sourceCompatibility = JavaVersion.VERSION_1_7
-        targetCompatibility = JavaVersion.VERSION_1_7
+        // Compatibilidad con Java 8
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+        isCoreLibraryDesugaringEnabled = true
     }
 }
 
@@ -53,6 +54,9 @@ dependencies {
     // Lifecycle (LiveData y ViewModel)
     implementation("androidx.lifecycle:lifecycle-livedata:2.6.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel:2.6.2")
+
+    // Desugaring
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
 
     // Tests
     testImplementation(libs.junit)
