@@ -68,9 +68,9 @@
             android:id="@+id/btnGuardar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/action_save"
-            android:textColor="#FFFFFF"
+            android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
-            android:layout_marginTop="16dp"/>
+            android:text="@string/action_save"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 </ScrollView>
