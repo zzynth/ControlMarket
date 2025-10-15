@@ -50,4 +50,9 @@ public class PurchaseAdapter extends RecyclerView.Adapter<PurchaseAdapter.ViewHo
             tvMonto = itemView.findViewById(R.id.tvMontoTotal);
         }
     }
+    public void setData(List<Purchase> nuevasCompras) {
+        this.compras = nuevasCompras;
+        notifyDataSetChanged();
+    }
+
 }

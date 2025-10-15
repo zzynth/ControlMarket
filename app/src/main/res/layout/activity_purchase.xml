@@ -1,8 +1,6 @@
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundLight"
     android:padding="24dp">
 
     <LinearLayout
@@ -11,26 +9,27 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tvTituloCompra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/purchase_title"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/primaryText"/>
+            android:layout_marginBottom="16dp"/>
 
         <EditText
             android:id="@+id/etNombreProducto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hint_product_name"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/etCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hint_category"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/etPrecio"
@@ -38,7 +37,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/hint_price"
             android:inputType="numberDecimal"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/etCantidad"
@@ -46,7 +45,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/hint_quantity"
             android:inputType="number"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/etDescuento"
@@ -54,7 +53,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/hint_discount"
             android:inputType="numberDecimal"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/etFecha"
@@ -62,15 +61,21 @@
             android:layout_height="wrap_content"
             android:hint="@string/hint_date"
             android:inputType="date"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginBottom="16dp"/>
 
         <Button
-            android:id="@+id/btnGuardar"
+            android:id="@+id/btnGuardarCompra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorPrimary"
             android:text="@string/action_save"
-            android:textColor="#FFFFFF" />
+            android:textColor="@android:color/white"
+            android:background="@color/colorPrimary"
+            android:minHeight="48dp"
+            android:layout_marginBottom="16dp"/>
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
     </LinearLayout>
 </ScrollView>

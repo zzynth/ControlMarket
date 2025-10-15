@@ -1,5 +1,6 @@
 package com.example.controlmarket;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +15,6 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
 
 public class PurchaseActivity extends AppCompatActivity {
 
@@ -38,7 +38,7 @@ public class PurchaseActivity extends AppCompatActivity {
         etCantidad = findViewById(R.id.etCantidad);
         etDescuento = findViewById(R.id.etDescuento);
         etFecha = findViewById(R.id.etFecha);
-        btnGuardar = findViewById(R.id.btnGuardar);
+        btnGuardar = findViewById(R.id.btnGuardarCompra);
         mapView = findViewById(R.id.mapView);
 
         mapView.onCreate(savedInstanceState);
@@ -58,17 +58,42 @@ public class PurchaseActivity extends AppCompatActivity {
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (etNombre.getText().toString().isEmpty() ||
+                        etCategoria.getText().toString().isEmpty() ||
+                        etPrecio.getText().toString().isEmpty() ||
+                        etCantidad.getText().toString().isEmpty() ||
+                        etDescuento.getText().toString().isEmpty() ||
+                        etFecha.getText().toString().isEmpty()) {
+
+                    etNombre.setError("Completa todos los campos");
+                    return;
+                }
+
+                double precio = Double.parseDouble(etPrecio.getText().toString());
+                int cantidad = Integer.parseInt(etCantidad.getText().toString());
+                double descuento = Double.parseDouble(etDescuento.getText().toString());
+                double total = (precio * cantidad) - descuento;
+
                 Purchase compra = new Purchase();
                 compra.nombre = etNombre.getText().toString();
                 compra.categoria = etCategoria.getText().toString();
-                compra.precio = Double.parseDouble(etPrecio.getText().toString());
-                compra.cantidad = Integer.parseInt(etCantidad.getText().toString());
-                compra.descuento = Double.parseDouble(etDescuento.getText().toString());
+                compra.precio = precio;
+                compra.cantidad = cantidad;
+                compra.descuento = descuento;
                 compra.fecha = etFecha.getText().toString();
                 compra.latitud = latitud;
                 compra.longitud = longitud;
 
                 db.purchaseDao().insertar(compra);
+
+                // Actualizar saldo en SharedPreferences
+                SharedPreferences prefs = getSharedPreferences("ControlMarketPrefs", MODE_PRIVATE);
+                double saldo = Double.longBitsToDouble(
+                        prefs.getLong("saldo", Double.doubleToLongBits(100000))
+                );
+                saldo -= total;
+                prefs.edit().putLong("saldo", Double.doubleToLongBits(saldo)).apply();
+
                 finish();
             }
         });
@@ -90,5 +115,11 @@ public class PurchaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         mapView.onDestroy();
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mapView.onLowMemory();
     }
 }

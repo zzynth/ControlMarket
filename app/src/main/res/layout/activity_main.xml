@@ -1,32 +1,40 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/backgroundLight"
-    android:padding="24dp">
+    android:padding="16dp">
 
+    <!-- Saldo disponible -->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tvSaldo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/main_title"
-        android:textSize="20sp"
+        android:text="Saldo: $0"
+        android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="@color/primaryText"/>
+        android:padding="8dp"
+        android:layout_marginBottom="8dp"/>
 
+    <!-- Botón para agregar compra -->
     <Button
         android:id="@+id/btnAgregarCompra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/action_add_purchase"
-        android:textColor="#FFFFFF"
-        android:background="@color/colorPrimary"
-        android:layout_marginTop="16dp"/>
+        android:text="Agregar compra"
+        android:layout_marginBottom="8dp"/>
 
+    <Button
+        android:id="@+id/btnResetDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Resetear Compras"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Lista de compras -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMovimientos"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="16dp"/>
+        android:layout_weight="1"/>
+
 </LinearLayout>
