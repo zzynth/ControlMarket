@@ -1,46 +1,31 @@
 <resources>
-    <!-- Nombre de la app -->
+    <!-- App -->
     <string name="app_name">Control Market</string>
 
-    <!-- Login y registro -->
+    <!-- Login -->
     <string name="login_title">Bienvenido</string>
-    <string name="login_subtitle">Accede a tu cuenta para comenzar</string>
     <string name="hint_username">Usuario</string>
     <string name="hint_password">Contraseña</string>
     <string name="action_login">Iniciar sesión</string>
-    <string name="action_register">Crear cuenta</string>
-    <string name="forgot_password">¿Olvidaste tu contraseña?</string>
+    <string name="msg_error_login">Credenciales incorrectas</string>
 
-    <!-- Registro de usuario -->
-    <string name="register_title">Crear nueva cuenta</string>
-    <string name="hint_email">Correo electrónico</string>
-    <string name="hint_confirm_password">Confirmar contraseña</string>
-    <string name="action_create_account">Registrarse</string>
+    <!-- Main -->
+    <string name="main_title">Mis movimientos</string>
+    <string name="action_add_purchase">Agregar compra</string>
+    <string name="action_view_map">Ver mapa</string>
 
-    <!-- Dashboard -->
-    <string name="dashboard_title">Resumen general</string>
-    <string name="label_balance">Saldo disponible</string>
-    <string name="label_expenses">Gastos del mes</string>
-    <string name="label_income">Ingresos</string>
-    <string name="label_add_transaction">Agregar movimiento</string>
+    <!-- Compra -->
+    <string name="purchase_title">Registrar compra</string>
+    <string name="hint_product_name">Nombre del producto</string>
+    <string name="hint_category">Categoría</string>
+    <string name="hint_price">Precio unitario</string>
+    <string name="hint_quantity">Cantidad</string>
+    <string name="hint_discount">Descuento (%)</string>
+    <string name="hint_date">Fecha</string>
+    <string name="action_save">Guardar</string>
+    <string name="action_delete">Eliminar</string>
+    <string name="msg_saved">Compra guardada correctamente</string>
 
-    <!-- Estadísticas -->
-    <string name="statistics_title">Estadísticas</string>
-    <string name="label_clothing_expense">Gasto en Ropa</string>
-    <string name="label_entertainment_expense">Gasto en Diversión</string>
-
-    <!-- Historial -->
-    <string name="history_title">Historial de movimientos</string>
-    <string name="label_filter_by_date">Filtrar por fecha</string>
-    <string name="label_filter_by_category">Filtrar por categoría</string>
-
-    <!-- Perfil -->
-    <string name="profile_title">Mi perfil</string>
-    <string name="action_edit_profile">Editar perfil</string>
-    <string name="action_logout">Cerrar sesión</string>
-
-    <!-- Mensajes generales -->
-    <string name="msg_error_login">Usuario o contraseña incorrectos</string>
-    <string name="msg_success_transaction">Movimiento registrado correctamente</string>
-    <string name="msg_empty_fields">Por favor completa todos los campos</string>
+    <!-- Mapa -->
+    <string name="map_title">Ubicaciones de compras</string>
 </resources>
