@@ -1,12 +1,10 @@
 <resources>
     <!-- Colores principales -->
-    <color name="colorPrimary">#1E88E5</color>         <!-- Azul moderno -->
-    <color name="colorPrimaryDark">#1565C0</color>     <!-- Azul profundo -->
-    <color name="colorAccent">#FFB300</color>          <!-- Dorado suave -->
-
-    <!-- Fondo y texto -->
-    <color name="backgroundLight">#F9F9F9</color>
     <color name="primaryText">#212121</color>
+    <color name="backgroundLight">#FAFAFA</color>
+    <color name="colorPrimary">#1976D2</color>
+    <color name="colorAccent">#388E3C</color>
+    <color name="buttonText">#FFFFFF</color>
     <color name="secondaryText">#757575</color>
 
     <!-- Estados -->
@@ -15,4 +13,6 @@
 
     <!-- Bordes y sombras -->
     <color name="dividerColor">#BDBDBD</color>
+
+
 </resources>
