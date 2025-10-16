@@ -43,13 +43,14 @@ dependencies {
 
     // Room (base de datos local)
     implementation("androidx.room:room-runtime:2.6.1")
+    implementation(libs.play.services.maps)
     annotationProcessor("androidx.room:room-compiler:2.6.1")
 
     // RecyclerView (lista de movimientos)
     implementation("androidx.recyclerview:recyclerview:1.3.2")
 
     // Google Maps (ubicación de compras)
-    implementation("com.google.android.gms:play-services-maps:18.2.0")
+    implementation("com.google.android.gms:play-services-location:21.0.1")
 
     // Lifecycle (LiveData y ViewModel)
     implementation("androidx.lifecycle:lifecycle-livedata:2.6.2")
