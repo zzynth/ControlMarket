@@ -25,4 +25,7 @@ public interface PurchaseDao {
 
     @Query("SELECT * FROM compras WHERE id = :id LIMIT 1")
     Purchase buscarPorId(int id);
+
+    @Query("SELECT SUM((precio * cantidad) * (1 - descuento / 100.0)) FROM compras")
+    Double obtenerTotalGastado();
 }

@@ -4,12 +4,12 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Saldo disponible -->
+    <!-- Total gastado -->
     <TextView
-        android:id="@+id/tvSaldo"
+        android:id="@+id/tvTotalGastado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Saldo: $0"
+        android:text="Total gastado: $0"
         android:textSize="18sp"
         android:textStyle="bold"
         android:padding="8dp"

@@ -1,7 +1,6 @@
 package com.example.controlmarket;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,10 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView rvMovimientos;
     private PurchaseAdapter adapter;
     private AppDatabase db;
-    private TextView tvSaldo;
+    private TextView tvTotalGastado;
     private Button btnAgregarCompra;
-    private SharedPreferences prefs;
-    private static final String PREFS_NAME = "ControlMarketPrefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +25,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         db = AppDatabase.getInstance(this);
-        prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 
         rvMovimientos = findViewById(R.id.rvMovimientos);
-        tvSaldo = findViewById(R.id.tvSaldo);
+        tvTotalGastado = findViewById(R.id.tvTotalGastado);
         btnAgregarCompra = findViewById(R.id.btnAgregarCompra);
 
         rvMovimientos.setLayoutManager(new LinearLayoutManager(this));
@@ -43,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         });
         rvMovimientos.setAdapter(adapter);
 
-        actualizarSaldo();
+        actualizarTotalGastado();
 
         btnAgregarCompra.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, PurchaseActivity.class);
@@ -56,12 +52,12 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         List<Purchase> comprasActualizadas = db.purchaseDao().obtenerTodas();
         adapter.setData(comprasActualizadas);
-        actualizarSaldo();
+        actualizarTotalGastado();
     }
 
-    private void actualizarSaldo() {
-        long saldoBits = prefs.getLong("saldo", Double.doubleToLongBits(100000));
-        double saldo = Double.longBitsToDouble(saldoBits);
-        tvSaldo.setText(String.format("Saldo: $%.0f", saldo));
+    private void actualizarTotalGastado() {
+        Double total = db.purchaseDao().obtenerTotalGastado();
+        if (total == null) total = 0.0;
+        tvTotalGastado.setText(String.format("Total gastado: $%.0f", total));
     }
 }
