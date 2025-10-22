@@ -10,13 +10,12 @@ public class Purchase {
     public int id;
 
     public String nombre;
-    public String categoria;
     public double precio;
     public int cantidad;
     public double descuento;
-    public String fecha;
     public double latitud;
     public double longitud;
+    public String direccion; // dirección textual obtenida con Geocoder
 
     public Purchase() {}
 

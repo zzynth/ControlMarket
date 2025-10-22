@@ -20,6 +20,9 @@ public interface PurchaseDao {
     @Delete
     void eliminar(Purchase compra);
 
-    @Query("SELECT * FROM compras ORDER BY fecha DESC")
+    @Query("SELECT * FROM compras ORDER BY id DESC")
     List<Purchase> obtenerTodas();
+
+    @Query("SELECT * FROM compras WHERE id = :id LIMIT 1")
+    Purchase buscarPorId(int id);
 }

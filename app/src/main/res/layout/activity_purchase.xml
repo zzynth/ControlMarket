@@ -25,13 +25,6 @@
             android:layout_marginBottom="12dp"/>
 
         <EditText
-            android:id="@+id/etCategoria"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_category"
-            android:layout_marginBottom="12dp"/>
-
-        <EditText
             android:id="@+id/etPrecio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,14 +46,6 @@
             android:layout_height="wrap_content"
             android:hint="@string/hint_discount"
             android:inputType="numberDecimal"
-            android:layout_marginBottom="12dp"/>
-
-        <EditText
-            android:id="@+id/etFecha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_date"
-            android:inputType="date"
             android:layout_marginBottom="16dp"/>
 
         <Button
@@ -76,6 +61,15 @@
         <com.google.android.gms.maps.MapView
             android:id="@+id/mapView"
             android:layout_width="match_parent"
-            android:layout_height="200dp"/>
+            android:layout_height="200dp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:padding="8dp"/>
     </LinearLayout>
 </ScrollView>

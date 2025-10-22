@@ -23,18 +23,10 @@
         android:text="Agregar compra"
         android:layout_marginBottom="8dp"/>
 
-    <Button
-        android:id="@+id/btnResetDB"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Resetear Compras"
-        android:layout_marginBottom="8dp"/>
-
     <!-- Lista de compras -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMovimientos"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
-
 </LinearLayout>

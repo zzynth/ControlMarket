@@ -36,4 +36,6 @@
 
     <!-- Mapa -->
     <string name="map_title">Ubicaciones de compras</string>
+
+    <string name="hint_nombre">Nombre del producto</string>
 </resources>

@@ -1,0 +1,78 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Nombre del producto"
+            android:inputType="text"
+            android:autofillHints="name"/>
+
+        <EditText
+            android:id="@+id/etPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Precio"
+            android:inputType="numberDecimal"
+            android:autofillHints="price"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etCantidad"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Cantidad"
+            android:inputType="number"
+            android:autofillHints="quantity"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etDescuento"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Descuento (%)"
+            android:inputType="numberDecimal"
+            android:autofillHints="discount"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Dirección"
+            android:inputType="textPostalAddress"
+            android:autofillHints="postalAddress"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar cambios"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/btnEliminar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Eliminar compra"
+            android:layout_marginTop="8dp"
+            android:textColor="#FFFFFF"
+            android:background="#D32F2F"/>
+
+        <Button
+            android:id="@+id/btnVerMapa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ver ubicación en el mapa"
+            android:layout_marginTop="12dp"/>
+    </LinearLayout>
+</ScrollView>
